@@ -1,6 +1,5 @@
 # Peer-to-Peer-Communication-Application
 
-# Peer-to-Peer Communication Application
 
 ## Overview
 This project implements a hybrid Peer-to-Peer (P2P) Communication Application. Designed for scalability, usability, and security, it offers features such as real-time group chat, file sharing, and decentralized communication. Built using Python, Flask, and Socket.IO, this application enables secure and efficient interactions without relying on a central server for most operations.
