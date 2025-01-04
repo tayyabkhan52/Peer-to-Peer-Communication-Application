@@ -23,6 +23,7 @@ To run this project, ensure you have the following installed:
 - **Flask**
 - **Flask-SocketIO**
 - **Requests**
+- **Node.js**
 
 Use the following command to install the required Python libraries:
 ```bash
