@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>P2P Chat Application with Groups</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <!-- Authentication Container -->
+    <div id="auth-container" class="auth-container">
+        <div class="auth-box">
+            <h2>P2P - 22F-3440 | 22F-3439</h2>
+            <div id="auth-message" class="auth-message"></div>
+            <input type="text" id="username" placeholder="Username" autocomplete="off">
+            <input type="password" id="password" placeholder="Password" autocomplete="off">
+            <div class="auth-buttons">
+                <button id="login-btn" class="btn">Login</button>
+                <button id="register-btn" class="btn btn-secondary">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Container -->
+    <div id="chat-container" class="chat-container" style="display: none;">
+        <!-- Sidebar with User List and Groups -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <button id="sidebar-toggle" class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+                <h3>Menu</h3>
+                <button id="create-group-btn" class="btn-small"><i class="fas fa-users"></i><span class="btn-text"> New Group</span></button>
+            </div>
+            <!-- User List -->
+            <div class="sidebar-section">
+                <h4><i class="fas fa-user-friends"></i><span class="section-text"> Users</span></h4>
+                <ul id="user-list" class="user-list">
+                    <!-- User items will be added dynamically -->
+                </ul>
+            </div>
+            <!-- Group List -->
+            <div class="sidebar-section">
+                <h4><i class="fas fa-users"></i><span class="section-text"> Groups</span></h4>
+                <ul id="group-list" class="group-list">
+                    <!-- Group items will be added dynamically -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <h3 id="chat-with">Select a user or group to start chatting</h3>
+                <button id="leave-group-btn" class="btn-small btn-secondary" style="display: none;"><i class="fas fa-sign-out-alt"></i> Leave Group</button>
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+
+            <!-- Chat Messages Display -->
+            <div id="chat-display" class="chat-display">
+                <div id="messages" class="messages">
+                    <!-- Messages will be added dynamically -->
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input">
+                <input type="text" id="message-input" placeholder="Type a message" autocomplete="off">
+                <button id="send-btn" class="send-btn"><i class="fas fa-paper-plane"></i></button>
+                <!-- Add this inside the chat-input div in index.html -->
+<input type="file" id="file-input" accept="*/*" style="display: none;">
+<button id="send-file-btn" class="send-btn"><i class="fas fa-paperclip"></i></button>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-header">
+                <button id="profile-toggle" class="profile-toggle"><i class="fas fa-user"></i></button>
+                <h4>Profile</h4>
+            </div>
+            <div class="profile-content">
+                <div class="avatar">
+                    <!-- Placeholder for user avatar -->
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <p id="username-display"><strong></strong></p>
+                <p id="status-display" class="status offline"><i class="fas fa-circle"></i> Offline</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Group Creation Modal -->
+    <div id="group-modal" class="modal">
+        <div class="modal-content">
+            <h3>Create New Group</h3>
+            <input type="text" id="group-name" placeholder="Group Name" autocomplete="off">
+            <h4>Select Members</h4>
+            <ul id="group-user-list" class="user-list">
+                <!-- User items will be added dynamically -->
+            </ul>
+            <div class="modal-buttons">
+                <button id="create-group-confirm-btn" class="btn">Create Group</button>
+                <button id="create-group-cancel-btn" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script> <!-- Link to Socket.IO -->
+    <script src="/static/script.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>

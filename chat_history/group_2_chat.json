@@ -1,0 +1,26 @@
+{
+  "name": "Study Group",
+  "members": [
+    "qudoos",
+    "musa",
+    "taha",
+    "tayyabk52"
+  ],
+  "history": [
+    {
+      "timestamp": "Tuesday, 11:36 AM",
+      "sender": "tayyabk52",
+      "content": "hello"
+    },
+    {
+      "timestamp": "Tuesday, 11:36 AM",
+      "sender": "tayyabk52",
+      "content": "paper tayar kr lia"
+    },
+    {
+      "timestamp": "Tuesday, 11:36 AM",
+      "sender": "taha",
+      "content": "ni abhi ni kia"
+    }
+  ]
+}
